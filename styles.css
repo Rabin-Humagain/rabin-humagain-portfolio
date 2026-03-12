@@ -46,8 +46,11 @@ body {
 
 @media (max-width: 768px) {
   #hero {
-    padding-top: 10px;
+    padding-top: 80px;
     min-height: auto;
     padding-bottom: 2rem;
+  }
+  #hero h1{
+    padding-top: 50px;
   }
 }
