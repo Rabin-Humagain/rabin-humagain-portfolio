@@ -1,0 +1,53 @@
+/* Custom styles for Rabin Portfolio */
+
+body {
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #007bff !important;
+}
+
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(assets/background.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #D96868;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.skill-item {
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.05);
+}
+
+.contact-form {
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    padding-top: 80px;
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+}
