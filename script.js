@@ -1,5 +1,9 @@
+// ==============================
+//  Rabin Portfolio — script.js
+// ==============================
 
-let is24Hour = true; // default format
+// ---------- Clock ----------
+let is24Hour = true;
 
 function updateClock() {
   const clock = document.getElementById('navbar-clock');
@@ -14,7 +18,7 @@ function updateClock() {
     clock.textContent = `${String(hours).padStart(2, '0')}:${minutes}:${seconds}`;
   } else {
     const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12 || 12; // converts 0 → 12 for midnight
+    hours = hours % 12 || 12;
     clock.textContent = `${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
   }
 }
@@ -26,18 +30,81 @@ function toggleClockFormat() {
 updateClock();
 setInterval(updateClock, 1000);
 
-//form submission handling using standard fetch API to send data to Formspree without page reload and providing user feedback on success or failure of the submission using the status element to display messages and disabling the submit button while the request is in progress to prevent multiple submissions using formspree.io for handling form submissions without needing a backend server and providing a simple way to receive messages via email.
 
+// ---------- Navbar shadow + active link on scroll ----------
+const navbar = document.querySelector('.navbar');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', function () {
+  // Navbar shadow
+  if (window.scrollY > 10) {
+    navbar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.1)';
+  } else {
+    navbar.style.boxShadow = 'none';
+  }
+
+  // Active nav link
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 90) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+
+  // Back to top button
+  const btn = document.getElementById('back-to-top');
+  if (btn) {
+    if (window.scrollY > 300) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  }
+});
+
+
+// ---------- Back to Top ----------
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+  backToTopBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+
+// ---------- Fade-in on Scroll (Intersection Observer) ----------
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(function (entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // only animate once
+    }
+  });
+}, { threshold: 0.15 });
+
+fadeEls.forEach(el => observer.observe(el));
+
+
+// ---------- Contact Form (Formspree) ----------
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 const submitBtn = document.getElementById('submit-btn');
 
 if (form) {
   form.addEventListener('submit', async function (e) {
-    e.preventDefault(); // stop normal page redirect
+    e.preventDefault();
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>Sending...';
 
     const data = new FormData(form);
 
@@ -49,19 +116,19 @@ if (form) {
       });
 
       if (response.ok) {
-        status.textContent = 'Message sent! I\'ll get back to you soon.';
+        status.textContent = '✅ Message sent! I\'ll get back to you soon.';
         status.style.color = 'green';
         form.reset();
       } else {
-        status.textContent = 'Something went wrong. Please try again.';
+        status.textContent = '❌ Something went wrong. Please try again.';
         status.style.color = 'red';
       }
     } catch (error) {
-      status.textContent = 'Network error. Check your connection.';
+      status.textContent = '❌ Network error. Check your connection.';
       status.style.color = 'red';
     }
 
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Send Message';
+    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane me-2"></i>Send Message';
   });
 }
