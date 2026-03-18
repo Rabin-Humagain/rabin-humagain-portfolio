@@ -20,10 +20,10 @@ body {
   background-position: center;
   color: #D96868;
 }
-img:hover{
-  transform: scale(1.1);
-  transform: rotateX('20deg') rotateY('20deg');
-  transition-duration: 0.4s;
+
+img:hover {
+  transform: scale(1.1) rotateY(10deg);
+  transition: transform 0.4s ease;
 }
 .card {
   transition: transform 0.5s ease, box-shadow 0.3s ease;
@@ -58,4 +58,35 @@ img:hover{
   #hero h1{
     padding-top: 50px;
   }
+}
+.skill-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+}
+
+.nav-link:hover {
+  color: #007bff !important;
+  transition: color 0.2s;
+}
+
+
+footer {
+  background: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
 }

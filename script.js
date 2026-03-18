@@ -1,31 +1,4 @@
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
 
-    // Simple form validation
-    const name = this.querySelector('input[type="text"]').value.trim();
-    const email = this.querySelector('input[type="email"]').value.trim();
-    const message = this.querySelector('textarea').value.trim();
-
-    if (!name || !email || !message) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    // In a real application, you would send the form data to a server
-    alert('Thank you for your message! I will get back to you soon.');
-    this.reset();
-  });
-}
 let is24Hour = true; // default format
 
 function updateClock() {
@@ -52,3 +25,43 @@ function toggleClockFormat() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+//form submission handling using standard fetch API to send data to Formspree without page reload and providing user feedback on success or failure of the submission using the status element to display messages and disabling the submit button while the request is in progress to prevent multiple submissions using formspree.io for handling form submissions without needing a backend server and providing a simple way to receive messages via email.
+
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+const submitBtn = document.getElementById('submit-btn');
+
+if (form) {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); // stop normal page redirect
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.textContent = 'Message sent! I\'ll get back to you soon.';
+        status.style.color = 'green';
+        form.reset();
+      } else {
+        status.textContent = 'Something went wrong. Please try again.';
+        status.style.color = 'red';
+      }
+    } catch (error) {
+      status.textContent = 'Network error. Check your connection.';
+      status.style.color = 'red';
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
+  });
+}
