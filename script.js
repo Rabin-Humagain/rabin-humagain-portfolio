@@ -116,15 +116,15 @@ if (form) {
       });
 
       if (response.ok) {
-        status.textContent = '✅ Message sent! I\'ll get back to you soon.';
+        status.textContent = ' Message sent! I\'ll get back to you soon.';
         status.style.color = 'green';
         form.reset();
       } else {
-        status.textContent = '❌ Something went wrong. Please try again.';
+        status.textContent = ' Something went wrong. Please try again.';
         status.style.color = 'red';
       }
     } catch (error) {
-      status.textContent = '❌ Network error. Check your connection.';
+      status.textContent = ' Network error. Check your connection.';
       status.style.color = 'red';
     }
 
