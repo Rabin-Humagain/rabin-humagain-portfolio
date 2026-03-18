@@ -26,3 +26,29 @@ if (contactForm) {
     this.reset();
   });
 }
+let is24Hour = true; // default format
+
+function updateClock() {
+  const clock = document.getElementById('navbar-clock');
+  if (!clock) return;
+
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+
+  if (is24Hour) {
+    clock.textContent = `${String(hours).padStart(2, '0')}:${minutes}:${seconds}`;
+  } else {
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12; // converts 0 → 12 for midnight
+    clock.textContent = `${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
+  }
+}
+
+function toggleClockFormat() {
+  is24Hour = !is24Hour;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
