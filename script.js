@@ -1,9 +1,9 @@
 // ==============================
 //  Rabin Portfolio — script.js
 // ==============================
-
 // ---------- Clock ----------
-let is24Hour = true;
+// Read saved preference, default to true (24hr) if nothing saved
+let is24Hour = localStorage.getItem('clockFormat') !== 'false';
 
 function updateClock() {
   const clock = document.getElementById('navbar-clock');
@@ -25,6 +25,7 @@ function updateClock() {
 
 function toggleClockFormat() {
   is24Hour = !is24Hour;
+  localStorage.setItem('clockFormat', is24Hour); // save preference
 }
 
 updateClock();
