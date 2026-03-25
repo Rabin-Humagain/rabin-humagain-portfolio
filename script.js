@@ -1,7 +1,4 @@
-// ==============================
-//  Rabin Portfolio — script.js
-// ==============================
-// ---------- Clock ----------
+
 // Read saved preference, default to true (24hr) if nothing saved
 let is24Hour = localStorage.getItem('clockFormat') !== 'false';
 
