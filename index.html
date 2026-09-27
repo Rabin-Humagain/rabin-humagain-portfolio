@@ -28,7 +28,7 @@
 
   <!-- Cache-busting: bump ?v= on every deploy so a stale CDN/browser cache
        (e.g. Cloudflare in front of GitHub Pages) can never serve old CSS/JS. -->
-  <link rel="stylesheet" href="styles.css?v=20260927-2" />
+  <link rel="stylesheet" href="styles.css?v=20260927-3" />
 
   <!-- Enable JS-only enhancements (reveal animations, preloader) -->
   <script>
@@ -125,6 +125,17 @@
       <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
         d="M21 3 10.5 13.5M21 3l-7 18-3.5-7.5L3 10l18-7Z" />
     </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M8 5.2v13.6L19 12 8 5.2Z" />
+    </symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
+        d="M20.5 12a8.5 8.5 0 1 1-2.5-6M20.5 4.5v5h-5" />
+    </symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        d="M8 4h8v5a4 4 0 0 1-8 0V4Z M8 5H5v1.5A3.5 3.5 0 0 0 8.5 10 M16 5h3v1.5A3.5 3.5 0 0 1 15.5 10 M12 9.5V20 M8.5 20h7" />
+    </symbol>
   </svg>
 
   <!-- ===== PRELOADER ===== -->
@@ -163,6 +174,7 @@
         <a href="#about" class="nav__link">About</a>
         <a href="#skills" class="nav__link">Skills</a>
         <a href="#projects" class="nav__link">Work</a>
+        <a href="#arcade" class="nav__link">Arcade</a>
         <a href="#journey" class="nav__link">Journey</a>
         <a href="#contact" class="nav__link">Contact</a>
         <a href="#contact" class="nav__link nav__link--cta">Hire Me</a>
@@ -607,11 +619,80 @@
       </div>
     </section>
 
+    <!-- ===== ARCADE ===== -->
+    <section class="section" id="arcade">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__kicker">04 — Arcade</span>
+          <h2 class="section__title">Take a <span class="grad-text">brain break</span></h2>
+          <p class="section__sub">A small game I built for fun. Playable right here — nothing to install.</p>
+        </header>
+
+        <article class="cabinet reveal">
+          <div class="cabinet__body">
+            <div class="cabinet__head">
+              <span class="badge-live"><span class="badge-live__dot"></span> Playable</span>
+              <span class="project__meta">Logic · Puzzle</span>
+            </div>
+
+            <h3 class="cabinet__title">Code Breaker</h3>
+
+            <p class="cabinet__desc">
+              A hidden code of four colours is waiting. Every guess tells you how close you were —
+              work out the rest by deduction. Eight guesses, six colours, no luck involved.
+            </p>
+
+            <ul class="cabinet__legend">
+              <li><span class="peg peg--hit"></span> Right colour, right slot</li>
+              <li><span class="peg peg--near"></span> Right colour, wrong slot</li>
+            </ul>
+
+            <button class="btn btn--primary magnetic" id="playCodeBreaker" type="button">
+              <svg class="ico" aria-hidden="true"><use href="#i-play" /></svg> Play Code Breaker
+            </button>
+          </div>
+
+          <div class="cabinet__art" aria-hidden="true">
+            <div class="art">
+              <div class="art__row">
+                <span class="art__peg" style="--c: var(--violet)"></span>
+                <span class="art__peg" style="--c: var(--cyan)"></span>
+                <span class="art__peg" style="--c: var(--pink)"></span>
+                <span class="art__peg" style="--c: var(--lime)"></span>
+                <span class="art__fb"><i></i><i></i><i class="on"></i><i></i></span>
+              </div>
+              <div class="art__row">
+                <span class="art__peg" style="--c: var(--amber)"></span>
+                <span class="art__peg" style="--c: var(--violet)"></span>
+                <span class="art__peg" style="--c: var(--cyan)"></span>
+                <span class="art__peg" style="--c: var(--blue)"></span>
+                <span class="art__fb"><i class="on"></i><i class="on"></i><i></i><i></i></span>
+              </div>
+              <div class="art__row art__row--active">
+                <span class="art__peg art__peg--empty"></span>
+                <span class="art__peg art__peg--empty"></span>
+                <span class="art__peg art__peg--empty"></span>
+                <span class="art__peg art__peg--empty"></span>
+                <span class="art__fb"></span>
+              </div>
+              <div class="art__row">
+                <span class="art__peg art__peg--empty"></span>
+                <span class="art__peg art__peg--empty"></span>
+                <span class="art__peg art__peg--empty"></span>
+                <span class="art__peg art__peg--empty"></span>
+                <span class="art__fb"></span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- ===== JOURNEY ===== -->
     <section class="section" id="journey">
       <div class="container">
         <header class="section__head reveal">
-          <span class="section__kicker">04 — Journey</span>
+          <span class="section__kicker">05 — Journey</span>
           <h2 class="section__title">Where I've <span class="grad-text">been learning</span></h2>
         </header>
 
@@ -657,7 +738,7 @@
     <section class="section" id="contact">
       <div class="container">
         <header class="section__head reveal">
-          <span class="section__kicker">05 — Contact</span>
+          <span class="section__kicker">06 — Contact</span>
           <h2 class="section__title">Let's build <span class="grad-text">something good</span></h2>
           <p class="section__sub">Have a project, an idea, or just want to say hello? My inbox is always open.</p>
         </header>
@@ -761,7 +842,69 @@
     <svg class="ico" aria-hidden="true"><use href="#i-arrow-up" /></svg>
   </button>
 
+  <!-- ===== ARCADE OVERLAY ===== -->
+  <div class="arcade" id="arcadeOverlay" hidden>
+    <div class="arcade__backdrop" data-arcade-close></div>
+
+    <div class="arcade__panel" id="arcadePanel" role="dialog" aria-modal="true" aria-labelledby="arcadeTitle"
+      aria-describedby="arcadeDesc" tabindex="-1">
+      <header class="arcade__top">
+        <div class="arcade__id">
+          <span class="arcade__mark"><svg class="ico" aria-hidden="true"><use href="#i-code" /></svg></span>
+          <div>
+            <h2 class="arcade__title" id="arcadeTitle">Code Breaker</h2>
+            <p class="arcade__desc" id="arcadeDesc">Crack the four-colour code in eight guesses.</p>
+          </div>
+        </div>
+        <button class="icon-btn" type="button" data-arcade-close aria-label="Close game">
+          <svg class="ico" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+      </header>
+
+      <div class="arcade__hud">
+        <div class="hud">
+          <span class="hud__label">Score</span>
+          <span class="hud__value" id="cbScore">—</span>
+        </div>
+        <div class="hud">
+          <span class="hud__label"><svg class="ico" aria-hidden="true"><use href="#i-trophy" /></svg> Best</span>
+          <span class="hud__value" id="cbBest">0</span>
+        </div>
+        <div class="hud">
+          <span class="hud__label">Guess</span>
+          <span class="hud__value" id="cbGuess">1 / 8</span>
+        </div>
+      </div>
+
+      <div class="arcade__stage">
+        <div class="cb__board" id="cbBoard" role="group" aria-label="Guess board"></div>
+
+        <div class="cb__controls">
+          <div class="cb__palette" id="cbPalette" role="group" aria-label="Choose a colour"></div>
+
+          <div class="cb__actions">
+            <button class="btn btn--ghost" id="cbClear" type="button">Clear</button>
+            <button class="btn btn--primary" id="cbSubmit" type="button">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="arcade__msg" id="cbMsg" role="status" aria-live="polite"></p>
+
+      <footer class="arcade__foot">
+        <span class="hint"><kbd>1</kbd>–<kbd>6</kbd> colour</span>
+        <span class="hint"><kbd>←</kbd><kbd>→</kbd> move</span>
+        <span class="hint"><kbd>Enter</kbd> submit</span>
+        <span class="hint"><kbd>Esc</kbd> exit</span>
+        <button class="arcade__again" id="cbRestart" type="button">
+          <svg class="ico" aria-hidden="true"><use href="#i-refresh" /></svg> New game
+        </button>
+      </footer>
+    </div>
+  </div>
+
   <script src="script.js?v=20260927"></script>
+  <script src="games.js?v=20260927-3"></script>
 </body>
 
 </html>
