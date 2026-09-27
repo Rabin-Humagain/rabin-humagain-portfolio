@@ -946,6 +946,116 @@ body.menu-open #navToggle .ico--close { display: block; }
 
 .project.is-hidden { display: none; }
 
+/* Featured (flagship) project — spans the full grid width */
+.project--featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 2.2rem;
+  align-items: center;
+  padding: 2.2rem;
+  border-color: var(--border-2);
+  background:
+    linear-gradient(135deg, rgba(124, 92, 255, .1), rgba(34, 211, 238, .06) 60%, transparent),
+    var(--surface);
+}
+
+.featured__body { display: grid; align-content: center; }
+
+.featured__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-bottom: 1.1rem;
+}
+
+.badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .35rem .8rem;
+  border-radius: var(--r-pill);
+  background: rgba(163, 230, 53, .12);
+  border: 1px solid rgba(163, 230, 53, .38);
+  color: var(--lime);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.badge-live__dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+  animation: pulse 2.2s infinite;
+}
+
+.project__title--lg { font-size: clamp(1.3rem, 2.7vw, 1.9rem); }
+
+.project__link--live {
+  color: #fff;
+  border-color: transparent;
+  background: var(--grad);
+  box-shadow: 0 12px 28px -14px rgba(124, 92, 255, .95);
+}
+.project__link--live:hover { transform: translateY(-2px); }
+
+/* Abstract UI representation (decorative — not a screenshot) */
+.featured__visual { display: grid; place-items: center; }
+
+.mock {
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--r);
+  overflow: hidden;
+  border: 1px solid var(--border-2);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  box-shadow: var(--shadow);
+  transition: transform .5s var(--ease);
+}
+.project--featured:hover .mock { transform: translateY(-4px) scale(1.015); }
+
+.mock__bar {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .6rem .85rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.mock__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border-2); }
+
+.mock__url {
+  margin-left: .55rem;
+  font-size: .68rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mock__body {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: .8rem;
+  padding: .95rem;
+}
+
+.mock__side { display: grid; gap: .5rem; align-content: start; }
+
+.mock__line { height: 8px; border-radius: 4px; background: var(--surface-2); }
+.mock__line:first-child { background: var(--grad); opacity: .8; }
+
+.mock__main { display: grid; gap: .5rem; }
+
+.mock__chip { height: 15px; width: 58px; border-radius: 99px; background: var(--surface-2); }
+.mock__block { height: 32px; border-radius: 8px; background: var(--surface-2); }
+.mock__block--tall { height: 50px; }
+
+
 /* ---------- 15. Timeline ---------- */
 .timeline { position: relative; display: grid; gap: 1.4rem; padding-left: 2.2rem; }
 
@@ -1216,6 +1326,9 @@ body.menu-open #navToggle .ico--close { display: block; }
   .skills { grid-template-columns: 1fr 1fr; }
   .skills__card:last-child { grid-column: 1 / -1; }
   .projects { grid-template-columns: repeat(2, 1fr); }
+  .project--featured { grid-template-columns: 1fr; gap: 1.8rem; padding: 1.9rem; }
+  .featured__visual { order: -1; }
+  .mock { max-width: 440px; }
   .contact { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
   .footer__socials { grid-column: 1 / -1; }
@@ -1257,6 +1370,8 @@ body.menu-open #navToggle .ico--close { display: block; }
   .skills { grid-template-columns: 1fr; }
   .skills__card:last-child { grid-column: auto; }
   .projects { grid-template-columns: 1fr; }
+  .project--featured { padding: 1.5rem; }
+  .mock__body { grid-template-columns: 58px 1fr; padding: .8rem; }
   .footer__inner { grid-template-columns: 1fr; }
   .hero { padding-top: calc(var(--nav-h) + 1.5rem); }
   .hero__cta .btn { flex: 1; justify-content: center; }

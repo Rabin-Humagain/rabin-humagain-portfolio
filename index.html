@@ -28,7 +28,7 @@
 
   <!-- Cache-busting: bump ?v= on every deploy so a stale CDN/browser cache
        (e.g. Cloudflare in front of GitHub Pages) can never serve old CSS/JS. -->
-  <link rel="stylesheet" href="styles.css?v=20260927" />
+  <link rel="stylesheet" href="styles.css?v=20260927-2" />
 
   <!-- Enable JS-only enhancements (reveal animations, preloader) -->
   <script>
@@ -269,7 +269,7 @@
           <span class="stat__label">Days · 30 Projects</span>
         </div>
         <div class="stat reveal" data-delay="80">
-          <span class="stat__num" data-count="6" data-suffix="+">0</span>
+          <span class="stat__num" data-count="7" data-suffix="+">0</span>
           <span class="stat__label">Featured Projects</span>
         </div>
         <div class="stat reveal" data-delay="160">
@@ -424,7 +424,69 @@
         </div>
 
         <div class="projects" id="projectGrid">
-          <article class="project reveal" data-category="web">
+          <!-- Featured: live full-stack app -->
+          <article class="project project--featured reveal" data-category="web">
+            <div class="project__glow" aria-hidden="true"></div>
+
+            <div class="featured__body">
+              <div class="featured__head">
+                <span class="badge-live"><span class="badge-live__dot"></span> Live app</span>
+                <span class="project__meta">Full-stack · Education</span>
+              </div>
+
+              <h3 class="project__title project__title--lg">StudyWithRabin — Academic Digital Library</h3>
+
+              <p class="project__desc">
+                A cyber-library for students: browse subjects semester by semester and drill into
+                chapters, notes, slides, documents and diagrams — all from one dark dashboard,
+                backed by an admin panel for managing the content.
+              </p>
+
+              <ul class="project__tags">
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Supabase</li>
+                <li>Vite</li>
+                <li>Admin Dashboard</li>
+              </ul>
+
+              <div class="project__links">
+                <a href="https://studywithrabin.lovable.app" target="_blank" rel="noopener"
+                  class="project__link project__link--live">
+                  <svg class="ico" aria-hidden="true"><use href="#i-external" /></svg> Visit live site
+                </a>
+              </div>
+            </div>
+
+            <!-- Abstract representation of the app UI (decorative, not a screenshot) -->
+            <div class="featured__visual" aria-hidden="true">
+              <div class="mock">
+                <div class="mock__bar">
+                  <span class="mock__dot"></span>
+                  <span class="mock__dot"></span>
+                  <span class="mock__dot"></span>
+                  <span class="mock__url">studywithrabin.lovable.app</span>
+                </div>
+                <div class="mock__body">
+                  <div class="mock__side">
+                    <span class="mock__line"></span>
+                    <span class="mock__line"></span>
+                    <span class="mock__line"></span>
+                    <span class="mock__line"></span>
+                    <span class="mock__line"></span>
+                  </div>
+                  <div class="mock__main">
+                    <span class="mock__chip"></span>
+                    <span class="mock__block"></span>
+                    <span class="mock__block mock__block--tall"></span>
+                    <span class="mock__block"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="web" data-delay="80">
             <div class="project__glow" aria-hidden="true"></div>
             <div class="project__top">
               <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-sparkle" /></svg></span>
@@ -444,7 +506,7 @@
             </div>
           </article>
 
-          <article class="project reveal" data-category="web" data-delay="80">
+          <article class="project reveal" data-category="web" data-delay="160">
             <div class="project__glow" aria-hidden="true"></div>
             <div class="project__top">
               <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-check" /></svg></span>
@@ -464,7 +526,7 @@
             </div>
           </article>
 
-          <article class="project reveal" data-category="game" data-delay="160">
+          <article class="project reveal" data-category="game" data-delay="240">
             <div class="project__glow" aria-hidden="true"></div>
             <div class="project__top">
               <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-code" /></svg></span>
@@ -484,7 +546,7 @@
             </div>
           </article>
 
-          <article class="project reveal" data-category="web" data-delay="240">
+          <article class="project reveal" data-category="web" data-delay="320">
             <div class="project__glow" aria-hidden="true"></div>
             <div class="project__top">
               <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-external" /></svg></span>
@@ -504,7 +566,7 @@
             </div>
           </article>
 
-          <article class="project reveal" data-category="java" data-delay="320">
+          <article class="project reveal" data-category="java" data-delay="400">
             <div class="project__glow" aria-hidden="true"></div>
             <div class="project__top">
               <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-code" /></svg></span>
@@ -523,7 +585,7 @@
             </div>
           </article>
 
-          <article class="project reveal" data-category="web" data-delay="400">
+          <article class="project reveal" data-category="web" data-delay="480">
             <div class="project__glow" aria-hidden="true"></div>
             <div class="project__top">
               <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-external" /></svg></span>
