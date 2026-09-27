@@ -1,0 +1,23 @@
+# ---- Internal / local only ----
+# AI assistant project data (memory, config) — never publish
+.workbuddy-ai/
+
+# Local backup of the pre-redesign site — keep on disk, don't ship it
+legacy/
+
+# ---- Abandoned experiment leftovers (all empty, kept on disk) ----
+3d-portfolio.html
+3D_PORTFOLIO_GUIDE.md
+IMPLEMENTATION_COMPLETE.md
+README-UPDATED.md
+TRANSFORMATION_PLAN.md
+script-enhanced.js
+styles-enhanced.css
+js/portfolio-3d.js
+
+# ---- OS / editor noise ----
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~

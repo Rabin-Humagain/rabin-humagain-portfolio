@@ -1,312 +1,693 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rabin - Web Developer Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#06070d" />
+  <meta name="description"
+    content="Rabin Humagain — Web Developer & Problem Solver. BIM student building clean, functional web experiences with HTML, CSS, JavaScript, Java and Node.js." />
+  <meta name="author" content="Rabin Humagain" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rabin Humagain — Web Developer & Problem Solver" />
+  <meta property="og:description"
+    content="Portfolio of Rabin Humagain — web developer, BIM student, and lifelong problem solver." />
+  <meta property="og:image" content="assets/portfolio.jpeg" />
+
+  <title>Rabin Humagain — Web Developer &amp; Problem Solver</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB%3C/text%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Enable JS-only enhancements (reveal animations, preloader) -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
+  <!-- ===== SVG ICON SPRITE ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-github" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        d="M3 6.5h18v11H3zM3.5 7l8.5 6 8.5-6" />
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.2c0-1.24-.02-2.84-1.8-2.84-1.8 0-2.08 1.35-2.08 2.75V21h-4z" />
+    </symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M12 19V5M5.5 11.5 12 5l6.5 6.5" />
+    </symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M5 12h14M13 6l6 6-6 6" />
+    </symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M12 5v14M5.5 12.5 12 19l6.5-6.5" />
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
+        d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.41-1.41M4.93 19.07l1.41-1.41m0-11.32L4.93 4.93m14.14 14.14-1.41-1.41M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
+        d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18" />
+    </symbol>
+    <symbol id="i-external" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
+        d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" />
+    </symbol>
+    <symbol id="i-code" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
+        d="m8 8-4 4 4 4m8-8 4 4-4 4M13.5 5l-3 14" />
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
+        d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16" />
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8" />
+    </symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        d="m2 8.5 10-4 10 4-10 4-10-4Zm3 2v4.5c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V10.5" />
+    </symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        d="M3 8h18v11H3zM8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" />
+    </symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        d="M9 9h10v10H9zM5 15V5h10" />
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+        d="m5 13 4.5 4.5L19 7" />
+    </symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M12 2.5c.6 3.9 2.6 5.9 6.5 6.5-3.9.6-5.9 2.6-6.5 6.5-.6-3.9-2.6-5.9-6.5-6.5 3.9-.6 5.9-2.6 6.5-6.5Zm6.5 11c.3 1.9 1.3 2.9 3.2 3.2-1.9.3-2.9 1.3-3.2 3.2-.3-1.9-1.3-2.9-3.2-3.2 1.9-.3 2.9-1.3 3.2-3.2Z" />
+    </symbol>
+    <symbol id="i-send" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        d="M21 3 10.5 13.5M21 3l-7 18-3.5-7.5L3 10l18-7Z" />
+    </symbol>
+  </svg>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Rabin</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item d-flex align-items-center ms-3">
-            <span id="navbar-clock" onclick="toggleClockFormat()"
-              style="font-size: 0.9rem; color: #555; cursor: pointer;" title="Click to toggle 12/24hr">
-            </span>
-          </li>
-        </ul>
+  <!-- ===== PRELOADER ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__mark">
+      <span class="preloader__logo">R</span>
+      <span class="preloader__ring"></span>
+    </div>
+    <p class="preloader__text">Loading experience…</p>
+  </div>
+
+  <!-- ===== SCROLL PROGRESS ===== -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <!-- ===== CURSOR GLOW (desktop only) ===== -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ===== BACKGROUND ORBS ===== -->
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="orb orb--3"></span>
+    <span class="grid-overlay"></span>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="brand" aria-label="Rabin Humagain — home">
+        <span class="brand__mark">R</span>
+        <span class="brand__text">Rabin<span class="brand__dot">.</span></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#home" class="nav__link is-active">Home</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#projects" class="nav__link">Work</a>
+        <a href="#journey" class="nav__link">Journey</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="#contact" class="nav__link nav__link--cta">Hire Me</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle colour theme"
+          title="Toggle light / dark">
+          <svg class="ico ico--sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          <svg class="ico ico--moon" aria-hidden="true"><use href="#i-moon" /></svg>
+        </button>
+        <button class="icon-btn nav__burger" id="navToggle" type="button" aria-label="Open menu"
+          aria-expanded="false" aria-controls="navLinks">
+          <svg class="ico ico--menu" aria-hidden="true"><use href="#i-menu" /></svg>
+          <svg class="ico ico--close" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section id="hero" class="text-center">
-    <div class="container">
-      <h1 class="display-4">Rabin Humagain</h1>
-      <p class="lead">Web Developer & Problem Solver</p>
-      <p class="hero-sub">BIM Student · Hetauda School of Management and Social Sciences</p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn btn-primary btn-lg me-2">Get In Touch</a>
-        <a href="#projects" class="btn btn-outline-primary btn-lg">View Projects</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <span class="pill reveal" data-delay="0">
+            <span class="pill__dot"></span> Available for opportunities
+          </span>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">About Me</h2>
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <p>Hi! I'm Rabin Humagain, a passionate web developer and a student currently studying Bachelor's in
-            Information Management (BIM) at Hetauda School of Management and Social Sciences. I love creating simple,
-            functional websites and enjoy solving problems through code.</p>
-          <p>Currently studying and working on improving my skills through various projects and challenges. I believe
-            learning is the way to stay away from boredom.</p>
-        </div>
-        <div class="col-md-6 text-center">
-          <img src="assets/portfolio.jpeg" alt="Rabin Humagain" class="img-fluid rounded-circle profile-img"
-            style="max-width: 250px;">
-        </div>
-      </div>
-    </div>
-  </section>
+          <h1 class="hero__title reveal" data-delay="80">
+            Hi, I'm <span class="grad-text">Rabin Humagain</span>
+          </h1>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="bg-light py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">My Projects</h2>
-      <div class="row">
+          <p class="hero__role reveal" data-delay="160">
+            I build <span class="type" id="typewriter" aria-live="polite"></span><span class="caret"
+              aria-hidden="true"></span>
+          </p>
 
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">30 Days 30 Projects Challenge</h5>
-              <p class="card-text">A web development challenge where I built 30 different projects over 30 days.</p>
-              <div class="mb-2">
-                <span class="badge bg-secondary">HTML</span>
-                <span class="badge bg-secondary">CSS</span>
-                <span class="badge bg-secondary">JavaScript</span>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0 pb-3">
-              <a href="https://github.com/rabin699/30-days-30-Projects-WebDev-" class="btn btn-outline-dark btn-sm me-2"
-                target="_blank"><i class="fa-brands fa-github me-1"></i>GitHub</a>
-            </div>
+          <p class="hero__lead reveal" data-delay="220">
+            A web developer and BIM student who turns ideas into clean, functional and
+            delightfully simple digital experiences — one line of code at a time.
+          </p>
+
+          <div class="hero__cta reveal" data-delay="280">
+            <a href="#projects" class="btn btn--primary magnetic">
+              View My Work <svg class="ico" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost magnetic">Get In Touch</a>
           </div>
-        </div>
 
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">To-Do Application</h5>
-              <p class="card-text">A simple task management app with add, edit, and delete functionality.</p>
-              <div class="mb-2">
-                <span class="badge bg-secondary">JavaScript</span>
-                <span class="badge bg-secondary">Local Storage</span>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0 pb-3">
-              <a href="https://github.com/rabin699/Day-2-To-Do-App-" class="btn btn-outline-dark btn-sm me-2"
-                target="_blank"><i class="fa-brands fa-github me-1"></i>GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Number Guessing Game</h5>
-              <p class="card-text">An interactive guessing game with score tracking and session storage.</p>
-              <div class="mb-2">
-                <span class="badge bg-secondary">JavaScript</span>
-                <span class="badge bg-secondary">Game</span>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0 pb-3">
-              <a href="https://github.com/rabin699/Guess-The-Secret-Number-Game" class="btn btn-outline-dark btn-sm me-2"
-                target="_blank"><i class="fa-brands fa-github me-1"></i>GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Portfolio Website</h5>
-              <p class="card-text">A responsive portfolio website showcasing my work and skills.</p>
-              <div class="mb-2">
-                <span class="badge bg-secondary">HTML</span>
-                <span class="badge bg-secondary">CSS</span>
-                <span class="badge bg-secondary">Responsive</span>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0 pb-3">
-              <a href="https://github.com/rabin699/demo-portfolio-teamX" class="btn btn-outline-dark btn-sm me-2"
-                target="_blank"><i class="fa-brands fa-github me-1"></i>GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Java DSA</h5>
-              <p class="card-text">Data structures and algorithms implementations in Java.</p>
-              <div class="mb-2">
-                <span class="badge bg-secondary">Java</span>
-                <span class="badge bg-secondary">Algorithms</span>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0 pb-3">
-              <a href="https://github.com/rabin699/Java-DSA-" class="btn btn-outline-dark btn-sm me-2"
-                target="_blank"><i class="fa-brands fa-github me-1"></i>GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Hosting & Deployment</h5>
-              <p class="card-text">Projects focused on web hosting and deployment strategies using various platforms.</p>
-              <div class="mb-2">
-                <span class="badge bg-secondary">Hosting</span>
-                <span class="badge bg-secondary">Deployment</span>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0 pb-3">
-              <a href="https://github.com/rabin699/Hosting" class="btn btn-outline-dark btn-sm me-2"
-                target="_blank"><i class="fa-brands fa-github me-1"></i>GitHub</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">My Skills</h2>
-      <div class="row text-center g-4">
-
-        <div class="col-md-3 col-6">
-          <div class="skill-card p-4 border rounded h-100">
-            <i class="fa-brands fa-html5 skill-icon" style="color:#e34c26"></i>
-            <h6 class="mt-2">HTML5</h6>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-          <div class="skill-card p-4 border rounded h-100">
-            <i class="fa-brands fa-css3-alt skill-icon" style="color:#264de4"></i>
-            <h6 class="mt-2">CSS3</h6>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-          <div class="skill-card p-4 border rounded h-100">
-            <i class="fa-brands fa-js skill-icon" style="color:#f0db4f"></i>
-            <h6 class="mt-2">JavaScript</h6>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-          <div class="skill-card p-4 border rounded h-100">
-            <i class="fa-brands fa-bootstrap skill-icon" style="color:#7952b3"></i>
-            <h6 class="mt-2">Bootstrap</h6>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-          <div class="skill-card p-4 border rounded h-100">
-            <i class="fa-brands fa-java skill-icon" style="color:#007396"></i>
-            <h6 class="mt-2">Java</h6>
-          </div>
-        </div>
-        
-
-        <div class="col-md-3 col-6">
-          <div class="skill-card p-4 border rounded h-100">
-            <i class="fa-brands fa-node-js skill-icon" style="color:#3c873a"></i>
-            <h6 class="mt-2">Node.js</h6>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-          <div class="skill-card p-4 border rounded h-100">
-            <i class="fa-brands fa-git-alt skill-icon" style="color:#f05032"></i>
-            <h6 class="mt-2">Git</h6>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-          <div class="skill-card p-4 border rounded h-100">
-            <i class="fa-solid fa-terminal skill-icon" style="color:#555"></i>
-            <h6 class="mt-2">Command Line</h6>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="bg-light py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Contact Me</h2>
-      <div class="row">
-        <div class="col-md-6 mb-4">
-          <p>Feel free to reach out if you'd like to work together or just say hello!</p>
-          <p>I am always available for your inquiries.</p>
-          <p><span>Anyone can send a message to me using the contact form aside:</span></p>
-          <ul class="list-unstyled contact-info">
-            <li class="mb-2">
-              <i class="fa-solid fa-envelope me-2 text-primary"></i>
-              <a href="mailto:rabinhumagain444@gmail.com">rabinhumagain444@gmail.com</a>
+          <ul class="hero__socials reveal" data-delay="340">
+            <li>
+              <a href="https://github.com/Rabin-Humagain" target="_blank" rel="noopener" class="social"
+                aria-label="GitHub">
+                <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg>
+              </a>
             </li>
-            <li class="mb-2">
-              <i class="fa-brands fa-github me-2 text-primary"></i>
-              <a href="https://github.com/Rabin-Humagain" target="_blank">github.com/Rabin-Humagain</a>
+            <li>
+              <a href="mailto:rabinhumagain444@gmail.com" class="social" aria-label="Email">
+                <svg class="ico" aria-hidden="true"><use href="#i-mail" /></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/rabin699" target="_blank" rel="noopener" class="social"
+                aria-label="GitHub (projects)">
+                <svg class="ico" aria-hidden="true"><use href="#i-code" /></svg>
+              </a>
             </li>
           </ul>
         </div>
-        <div class="col-md-6">
-          <form id="contact-form" action="https://formspree.io/f/mreyrkwo" method="POST">
-            <div class="mb-3">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+
+        <div class="hero__visual reveal" data-delay="200">
+          <div class="avatar">
+            <div class="avatar__ring"></div>
+            <div class="avatar__frame">
+              <img src="assets/portfolio.jpeg" alt="Portrait of Rabin Humagain" width="480" height="480"
+                loading="eager" />
             </div>
-            <div class="mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+
+            <span class="float-badge float-badge--1" title="JavaScript">
+              <svg class="ico" aria-hidden="true"><use href="#i-code" /></svg> JavaScript
+            </span>
+            <span class="float-badge float-badge--2" title="Clean UI">
+              <svg class="ico" aria-hidden="true"><use href="#i-sparkle" /></svg> Clean UI
+            </span>
+            <span class="float-badge float-badge--3" title="Problem Solver">
+              <svg class="ico" aria-hidden="true"><use href="#i-cap" /></svg> BIM Student
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to about">
+        <span class="scroll-cue__mouse"><span></span></span>
+        <span class="scroll-cue__label">Scroll</span>
+      </a>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal">
+          <span class="stat__num" data-count="30">0</span>
+          <span class="stat__label">Days · 30 Projects</span>
+        </div>
+        <div class="stat reveal" data-delay="80">
+          <span class="stat__num" data-count="6" data-suffix="+">0</span>
+          <span class="stat__label">Featured Projects</span>
+        </div>
+        <div class="stat reveal" data-delay="160">
+          <span class="stat__num" data-count="8" data-suffix="+">0</span>
+          <span class="stat__label">Technologies</span>
+        </div>
+        <div class="stat reveal" data-delay="240">
+          <span class="stat__num" data-count="100" data-suffix="%">0</span>
+          <span class="stat__label">Curiosity &amp; Drive</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__kicker">01 — About</span>
+          <h2 class="section__title">A developer who loves <span class="grad-text">simple solutions</span></h2>
+        </header>
+
+        <div class="about">
+          <div class="about__media reveal">
+            <div class="about__photo">
+              <img src="assets/portfolio.jpeg" alt="Rabin Humagain" width="480" height="480" loading="lazy" />
             </div>
-            <div class="mb-3">
-              <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            <div class="about__chip about__chip--a">
+              <svg class="ico" aria-hidden="true"><use href="#i-cap" /></svg>
+              <div><strong>BIM Student</strong><span>Hetauda School of Mgmt &amp; Social Sciences</span></div>
             </div>
-            <button type="submit" class="btn btn-primary" id="submit-btn">
-              <i class="fa-solid fa-paper-plane me-2"></i>Send Message
+            <div class="about__chip about__chip--b">
+              <svg class="ico" aria-hidden="true"><use href="#i-pin" /></svg>
+              <div><strong>Nepal</strong><span>Open to remote work</span></div>
+            </div>
+          </div>
+
+          <div class="about__body reveal" data-delay="120">
+            <p class="about__lead">
+              Hi! I'm Rabin — a passionate web developer and a student currently studying
+              Bachelor's in Information Management (BIM). I love creating simple, functional
+              websites and enjoy solving problems through code.
+            </p>
+            <p>
+              I'm currently improving my skills through hands-on projects and challenges,
+              because I believe learning is the best way to stay away from boredom. From
+              interactive games to full web apps, I care about the small details that make
+              an interface feel effortless.
+            </p>
+
+            <ul class="about__list">
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check" /></svg> Clean, semantic, responsive code</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check" /></svg> Problem-first, user-centred thinking</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check" /></svg> Always learning, always shipping</li>
+            </ul>
+
+            <div class="about__actions">
+              <a href="#contact" class="btn btn--primary magnetic">Let's work together</a>
+              <a href="https://github.com/Rabin-Humagain" target="_blank" rel="noopener" class="btn btn--ghost magnetic">
+                <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__kicker">02 — Skills</span>
+          <h2 class="section__title">Tools I <span class="grad-text">build with</span></h2>
+        </header>
+
+        <div class="skills">
+          <article class="skills__card reveal">
+            <h3 class="skills__cat">Frontend</h3>
+            <ul class="bars">
+              <li class="bar" data-level="90">
+                <div class="bar__top"><span>HTML5</span><span class="bar__pct">90%</span></div>
+                <div class="bar__track"><span class="bar__fill"></span></div>
+              </li>
+              <li class="bar" data-level="85">
+                <div class="bar__top"><span>CSS3</span><span class="bar__pct">85%</span></div>
+                <div class="bar__track"><span class="bar__fill"></span></div>
+              </li>
+              <li class="bar" data-level="80">
+                <div class="bar__top"><span>JavaScript</span><span class="bar__pct">80%</span></div>
+                <div class="bar__track"><span class="bar__fill"></span></div>
+              </li>
+              <li class="bar" data-level="75">
+                <div class="bar__top"><span>Bootstrap</span><span class="bar__pct">75%</span></div>
+                <div class="bar__track"><span class="bar__fill"></span></div>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skills__card reveal" data-delay="100">
+            <h3 class="skills__cat">Languages &amp; Backend</h3>
+            <ul class="bars">
+              <li class="bar" data-level="78">
+                <div class="bar__top"><span>Java</span><span class="bar__pct">78%</span></div>
+                <div class="bar__track"><span class="bar__fill"></span></div>
+              </li>
+              <li class="bar" data-level="70">
+                <div class="bar__top"><span>Node.js</span><span class="bar__pct">70%</span></div>
+                <div class="bar__track"><span class="bar__fill"></span></div>
+              </li>
+              <li class="bar" data-level="72">
+                <div class="bar__top"><span>Data Structures &amp; Algorithms</span><span class="bar__pct">72%</span></div>
+                <div class="bar__track"><span class="bar__fill"></span></div>
+              </li>
+              <li class="bar" data-level="68">
+                <div class="bar__top"><span>Databases (SQL)</span><span class="bar__pct">68%</span></div>
+                <div class="bar__track"><span class="bar__fill"></span></div>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skills__card reveal" data-delay="200">
+            <h3 class="skills__cat">Tools &amp; Workflow</h3>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">VS Code</span>
+              <span class="tag">Command Line</span>
+              <span class="tag">Hosting</span>
+              <span class="tag">Deployment</span>
+              <span class="tag">Responsive Design</span>
+              <span class="tag">Netlify</span>
+              <span class="tag">GitHub Pages</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__kicker">03 — Work</span>
+          <h2 class="section__title">Selected <span class="grad-text">projects</span></h2>
+          <p class="section__sub">A mix of challenges, apps and experiments — tap a filter to explore.</p>
+        </header>
+
+        <div class="filters reveal" role="tablist" aria-label="Project filters">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter" data-filter="web" role="tab" aria-selected="false">Web Apps</button>
+          <button class="filter" data-filter="game" role="tab" aria-selected="false">Games</button>
+          <button class="filter" data-filter="java" role="tab" aria-selected="false">Java / DSA</button>
+        </div>
+
+        <div class="projects" id="projectGrid">
+          <article class="project reveal" data-category="web">
+            <div class="project__glow" aria-hidden="true"></div>
+            <div class="project__top">
+              <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-sparkle" /></svg></span>
+              <span class="project__meta">Challenge</span>
+            </div>
+            <h3 class="project__title">30 Days · 30 Projects</h3>
+            <p class="project__desc">A self-imposed web development challenge where I shipped 30 different
+              projects in 30 days to build real, consistent momentum.</p>
+            <ul class="project__tags">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+            <div class="project__links">
+              <a href="https://github.com/rabin699/30-days-30-Projects-WebDev-" target="_blank" rel="noopener"
+                class="project__link">
+                <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg> Source
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="web" data-delay="80">
+            <div class="project__glow" aria-hidden="true"></div>
+            <div class="project__top">
+              <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-check" /></svg></span>
+              <span class="project__meta">Productivity</span>
+            </div>
+            <h3 class="project__title">To-Do Application</h3>
+            <p class="project__desc">A clean task manager with add, edit and delete flows, persisting state
+              locally so nothing is ever lost between sessions.</p>
+            <ul class="project__tags">
+              <li>JavaScript</li><li>Local Storage</li><li>UI</li>
+            </ul>
+            <div class="project__links">
+              <a href="https://github.com/rabin699/Day-2-To-Do-App-" target="_blank" rel="noopener"
+                class="project__link">
+                <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg> Source
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="game" data-delay="160">
+            <div class="project__glow" aria-hidden="true"></div>
+            <div class="project__top">
+              <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-code" /></svg></span>
+              <span class="project__meta">Game</span>
+            </div>
+            <h3 class="project__title">Number Guessing Game</h3>
+            <p class="project__desc">An interactive guessing game with hints, score tracking and session
+              storage — small scope, tight feedback loop, lots of fun.</p>
+            <ul class="project__tags">
+              <li>JavaScript</li><li>Game Logic</li><li>Session Storage</li>
+            </ul>
+            <div class="project__links">
+              <a href="https://github.com/rabin699/Guess-The-Secret-Number-Game" target="_blank" rel="noopener"
+                class="project__link">
+                <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg> Source
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="web" data-delay="240">
+            <div class="project__glow" aria-hidden="true"></div>
+            <div class="project__top">
+              <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-external" /></svg></span>
+              <span class="project__meta">Portfolio</span>
+            </div>
+            <h3 class="project__title">Portfolio Website</h3>
+            <p class="project__desc">A responsive portfolio built to showcase my work — the very kind of site
+              you're looking at right now, refined and rebuilt.</p>
+            <ul class="project__tags">
+              <li>HTML</li><li>CSS</li><li>Responsive</li>
+            </ul>
+            <div class="project__links">
+              <a href="https://github.com/rabin699/demo-portfolio-teamX" target="_blank" rel="noopener"
+                class="project__link">
+                <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg> Source
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="java" data-delay="320">
+            <div class="project__glow" aria-hidden="true"></div>
+            <div class="project__top">
+              <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-code" /></svg></span>
+              <span class="project__meta">Algorithms</span>
+            </div>
+            <h3 class="project__title">Java DSA</h3>
+            <p class="project__desc">A growing collection of data structures and algorithms implemented in
+              Java — my training ground for writing efficient, well-reasoned code.</p>
+            <ul class="project__tags">
+              <li>Java</li><li>Algorithms</li><li>Problem Solving</li>
+            </ul>
+            <div class="project__links">
+              <a href="https://github.com/rabin699/Java-DSA-" target="_blank" rel="noopener" class="project__link">
+                <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg> Source
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="web" data-delay="400">
+            <div class="project__glow" aria-hidden="true"></div>
+            <div class="project__top">
+              <span class="project__icon"><svg class="ico" aria-hidden="true"><use href="#i-external" /></svg></span>
+              <span class="project__meta">DevOps</span>
+            </div>
+            <h3 class="project__title">Hosting &amp; Deployment</h3>
+            <p class="project__desc">Hands-on experiments with web hosting and deployment strategies across
+              platforms — learning how code actually reaches real users.</p>
+            <ul class="project__tags">
+              <li>Hosting</li><li>Deployment</li><li>Netlify</li>
+            </ul>
+            <div class="project__links">
+              <a href="https://github.com/rabin699/Hosting" target="_blank" rel="noopener" class="project__link">
+                <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg> Source
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== JOURNEY ===== -->
+    <section class="section" id="journey">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__kicker">04 — Journey</span>
+          <h2 class="section__title">Where I've <span class="grad-text">been learning</span></h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="tl reveal">
+            <span class="tl__dot"></span>
+            <div class="tl__card">
+              <span class="tl__time">Present</span>
+              <h3 class="tl__title">Bachelor's in Information Management (BIM)</h3>
+              <p class="tl__place"><svg class="ico" aria-hidden="true"><use href="#i-cap" /></svg> Hetauda School of
+                Management and Social Sciences</p>
+              <p class="tl__desc">Studying information management while applying everything I learn to real,
+                shipped projects.</p>
+            </div>
+          </li>
+          <li class="tl reveal" data-delay="100">
+            <span class="tl__dot"></span>
+            <div class="tl__card">
+              <span class="tl__time">Ongoing</span>
+              <h3 class="tl__title">Self-Taught Web Development</h3>
+              <p class="tl__place"><svg class="ico" aria-hidden="true"><use href="#i-code" /></svg> Projects &amp;
+                challenges</p>
+              <p class="tl__desc">From HTML, CSS and JavaScript to Java and Node.js — learning by building, one
+                project at a time.</p>
+            </div>
+          </li>
+          <li class="tl reveal" data-delay="200">
+            <span class="tl__dot"></span>
+            <div class="tl__card">
+              <span class="tl__time">Milestone</span>
+              <h3 class="tl__title">30 Days · 30 Projects Challenge</h3>
+              <p class="tl__place"><svg class="ico" aria-hidden="true"><use href="#i-briefcase" /></svg> Discipline
+                in practice</p>
+              <p class="tl__desc">Completed a month-long streak of daily builds — proof that consistency beats
+                intensity.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__kicker">05 — Contact</span>
+          <h2 class="section__title">Let's build <span class="grad-text">something good</span></h2>
+          <p class="section__sub">Have a project, an idea, or just want to say hello? My inbox is always open.</p>
+        </header>
+
+        <div class="contact">
+          <div class="contact__info reveal">
+            <a class="contact__card" href="mailto:rabinhumagain444@gmail.com">
+              <span class="contact__ic"><svg class="ico" aria-hidden="true"><use href="#i-mail" /></svg></span>
+              <span class="contact__txt">
+                <strong>Email</strong>
+                <span>rabinhumagain444@gmail.com</span>
+              </span>
+              <svg class="ico contact__go" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+            </a>
+
+            <button class="contact__card contact__card--btn" id="copyEmail" type="button" data-email="rabinhumagain444@gmail.com">
+              <span class="contact__ic"><svg class="ico" aria-hidden="true"><use href="#i-copy" /></svg></span>
+              <span class="contact__txt">
+                <strong>Copy email</strong>
+                <span>One click, ready to paste</span>
+              </span>
+              <svg class="ico contact__go" aria-hidden="true"><use href="#i-check" /></svg>
             </button>
-            <p id="form-status" class="mt-3 mb-0"></p>
+
+            <a class="contact__card" href="https://github.com/Rabin-Humagain" target="_blank" rel="noopener">
+              <span class="contact__ic"><svg class="ico" aria-hidden="true"><use href="#i-github" /></svg></span>
+              <span class="contact__txt">
+                <strong>GitHub</strong>
+                <span>github.com/Rabin-Humagain</span>
+              </span>
+              <svg class="ico contact__go" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+            </a>
+
+            <div class="contact__clock">
+              <span class="contact__clock-dot"></span>
+              <span>Local time — <strong id="localTime">--:--:--</strong></span>
+            </div>
+          </div>
+
+          <form class="form reveal" id="contactForm" action="https://formspree.io/f/mreyrkwo" method="POST"
+            data-delay="120">
+            <div class="field">
+              <input type="text" name="name" id="f-name" placeholder=" " required autocomplete="name" />
+              <label for="f-name">Your Name</label>
+            </div>
+            <div class="field">
+              <input type="email" name="email" id="f-email" placeholder=" " required autocomplete="email" />
+              <label for="f-email">Your Email</label>
+            </div>
+            <div class="field">
+              <textarea name="message" id="f-message" rows="5" placeholder=" " required></textarea>
+              <label for="f-message">Your Message</label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block" id="submitBtn">
+              <span class="btn__label"><svg class="ico" aria-hidden="true"><use href="#i-send" /></svg> Send
+                Message</span>
+            </button>
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p class="mb-1">© 2025 Rabin Humagain · Built with HTML, CSS & JavaScript</p>
-    <p class="mb-0">
-      <a href="mailto:rabinhumagain444@gmail.com">rabinhumagain444@gmail.com</a> ·
-      <a href="https://github.com/Rabin-Humagain" target="_blank">GitHub</a>
-    </p>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="brand">
+          <span class="brand__mark">R</span>
+          <span class="brand__text">Rabin<span class="brand__dot">.</span></span>
+        </a>
+        <p>Web developer &amp; problem solver. Building simple, useful things on the web.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer__socials">
+        <a href="https://github.com/Rabin-Humagain" target="_blank" rel="noopener" class="social" aria-label="GitHub">
+          <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg>
+        </a>
+        <a href="mailto:rabinhumagain444@gmail.com" class="social" aria-label="Email">
+          <svg class="ico" aria-hidden="true"><use href="#i-mail" /></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Rabin Humagain · Designed &amp; built with care.</p>
+      <p class="footer__tech">HTML · CSS · JavaScript</p>
+    </div>
   </footer>
 
-  <!-- BACK TO TOP -->
-  <button id="back-to-top" title="Back to top">
-    <i class="fa-solid fa-arrow-up"></i>
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top" title="Back to top">
+    <svg class="ico" aria-hidden="true"><use href="#i-arrow-up" /></svg>
   </button>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 
