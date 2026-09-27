@@ -28,7 +28,7 @@
 
   <!-- Cache-busting: bump ?v= on every deploy so a stale CDN/browser cache
        (e.g. Cloudflare in front of GitHub Pages) can never serve old CSS/JS. -->
-  <link rel="stylesheet" href="styles.css?v=20260927-3" />
+  <link rel="stylesheet" href="styles.css?v=20260927-4" />
 
   <!-- Enable JS-only enhancements (reveal animations, preloader) -->
   <script>
@@ -632,57 +632,49 @@
           <div class="cabinet__body">
             <div class="cabinet__head">
               <span class="badge-live"><span class="badge-live__dot"></span> Playable</span>
-              <span class="project__meta">Logic · Puzzle</span>
+              <span class="project__meta">Arcade · Real-time</span>
             </div>
 
-            <h3 class="cabinet__title">Code Breaker</h3>
+            <h3 class="cabinet__title">Neon Serpents</h3>
 
             <p class="cabinet__desc">
-              A hidden code of four colours is waiting. Every guess tells you how close you were —
-              work out the rest by deduction. Eight guesses, six colours, no luck involved.
+              Steer a glowing serpent around a neon arena, eating light to grow longer. Cut off the
+              rival snakes before they cut you off — one touch of a body and it's over.
             </p>
 
             <ul class="cabinet__legend">
-              <li><span class="peg peg--hit"></span> Right colour, right slot</li>
-              <li><span class="peg peg--near"></span> Right colour, wrong slot</li>
+              <li><span class="dot dot--eat"></span> Eat pellets to grow longer</li>
+              <li><span class="dot dot--boost"></span> Hold to boost — it burns length</li>
             </ul>
 
-            <button class="btn btn--primary magnetic" id="playCodeBreaker" type="button">
-              <svg class="ico" aria-hidden="true"><use href="#i-play" /></svg> Play Code Breaker
+            <button class="btn btn--primary magnetic" id="playSerpents" type="button">
+              <svg class="ico" aria-hidden="true"><use href="#i-play" /></svg> Play Neon Serpents
             </button>
           </div>
 
           <div class="cabinet__art" aria-hidden="true">
-            <div class="art">
-              <div class="art__row">
-                <span class="art__peg" style="--c: var(--violet)"></span>
-                <span class="art__peg" style="--c: var(--cyan)"></span>
-                <span class="art__peg" style="--c: var(--pink)"></span>
-                <span class="art__peg" style="--c: var(--lime)"></span>
-                <span class="art__fb"><i></i><i></i><i class="on"></i><i></i></span>
-              </div>
-              <div class="art__row">
-                <span class="art__peg" style="--c: var(--amber)"></span>
-                <span class="art__peg" style="--c: var(--violet)"></span>
-                <span class="art__peg" style="--c: var(--cyan)"></span>
-                <span class="art__peg" style="--c: var(--blue)"></span>
-                <span class="art__fb"><i class="on"></i><i class="on"></i><i></i><i></i></span>
-              </div>
-              <div class="art__row art__row--active">
-                <span class="art__peg art__peg--empty"></span>
-                <span class="art__peg art__peg--empty"></span>
-                <span class="art__peg art__peg--empty"></span>
-                <span class="art__peg art__peg--empty"></span>
-                <span class="art__fb"></span>
-              </div>
-              <div class="art__row">
-                <span class="art__peg art__peg--empty"></span>
-                <span class="art__peg art__peg--empty"></span>
-                <span class="art__peg art__peg--empty"></span>
-                <span class="art__peg art__peg--empty"></span>
-                <span class="art__fb"></span>
-              </div>
-            </div>
+            <svg class="snake-art" viewBox="0 0 340 210" width="100%">
+              <circle cx="54" cy="54" r="5" fill="var(--cyan)" />
+              <circle cx="98" cy="156" r="4" fill="var(--lime)" />
+              <circle cx="152" cy="44" r="4" fill="var(--pink)" />
+              <circle cx="198" cy="172" r="5" fill="var(--amber)" />
+              <circle cx="292" cy="146" r="4" fill="var(--cyan)" />
+              <circle cx="306" cy="54" r="5" fill="var(--pink)" />
+              <circle cx="252" cy="94" r="4" fill="var(--lime)" />
+              <circle cx="126" cy="98" r="4" fill="var(--amber)" />
+
+              <path d="M 30 176 C 96 176 100 118 156 118 C 212 118 218 66 278 66"
+                fill="none" stroke="var(--violet)" stroke-width="19" stroke-linecap="round" />
+              <circle cx="278" cy="66" r="12" fill="var(--violet)" />
+              <circle cx="281" cy="62" r="4.6" fill="#fff" />
+              <circle cx="283" cy="62" r="2.1" fill="#0a0b14" />
+
+              <path d="M 318 186 C 264 186 272 136 220 136 C 168 136 168 92 118 92"
+                fill="none" stroke="var(--cyan)" stroke-width="16" stroke-linecap="round" />
+              <circle cx="118" cy="92" r="10.5" fill="var(--cyan)" />
+              <circle cx="115" cy="88" r="4" fill="#fff" />
+              <circle cx="113" cy="88" r="1.8" fill="#0a0b14" />
+            </svg>
           </div>
         </article>
       </div>
@@ -846,14 +838,15 @@
   <div class="arcade" id="arcadeOverlay" hidden>
     <div class="arcade__backdrop" data-arcade-close></div>
 
-    <div class="arcade__panel" id="arcadePanel" role="dialog" aria-modal="true" aria-labelledby="arcadeTitle"
-      aria-describedby="arcadeDesc" tabindex="-1">
+    <div class="arcade__panel arcade__panel--wide" id="arcadePanel" role="dialog" aria-modal="true"
+      aria-labelledby="arcadeTitle" aria-describedby="arcadeDesc" tabindex="-1">
       <header class="arcade__top">
         <div class="arcade__id">
-          <span class="arcade__mark"><svg class="ico" aria-hidden="true"><use href="#i-code" /></svg></span>
+          <span class="arcade__mark"><svg class="ico" aria-hidden="true"><use href="#i-sparkle" /></svg></span>
           <div>
-            <h2 class="arcade__title" id="arcadeTitle">Code Breaker</h2>
-            <p class="arcade__desc" id="arcadeDesc">Crack the four-colour code in eight guesses.</p>
+            <h2 class="arcade__title" id="arcadeTitle">Neon Serpents</h2>
+            <p class="arcade__desc" id="arcadeDesc">Steer with your pointer, eat light to grow, and don't
+              touch anyone.</p>
           </div>
         </div>
         <button class="icon-btn" type="button" data-arcade-close aria-label="Close game">
@@ -863,48 +856,53 @@
 
       <div class="arcade__hud">
         <div class="hud">
-          <span class="hud__label">Score</span>
-          <span class="hud__value" id="cbScore">—</span>
+          <span class="hud__label">Length</span>
+          <span class="hud__value" id="spScore">0</span>
         </div>
         <div class="hud">
           <span class="hud__label"><svg class="ico" aria-hidden="true"><use href="#i-trophy" /></svg> Best</span>
-          <span class="hud__value" id="cbBest">0</span>
+          <span class="hud__value" id="spBest">0</span>
         </div>
         <div class="hud">
-          <span class="hud__label">Guess</span>
-          <span class="hud__value" id="cbGuess">1 / 8</span>
+          <span class="hud__label">Rivals</span>
+          <span class="hud__value" id="spAlive">0</span>
         </div>
       </div>
 
-      <div class="arcade__stage">
-        <div class="cb__board" id="cbBoard" role="group" aria-label="Guess board"></div>
+      <div class="sp__stage" id="spStage">
+        <canvas id="spCanvas" aria-label="Neon Serpents game arena"></canvas>
 
-        <div class="cb__controls">
-          <div class="cb__palette" id="cbPalette" role="group" aria-label="Choose a colour"></div>
+        <aside class="sp__board" id="spBoard">
+          <h3 class="sp__board-title">Leaderboard</h3>
+          <ol class="sp__board-list" id="spBoardList"></ol>
+        </aside>
 
-          <div class="cb__actions">
-            <button class="btn btn--ghost" id="cbClear" type="button">Clear</button>
-            <button class="btn btn--primary" id="cbSubmit" type="button">Submit</button>
-          </div>
+        <div class="sp__card" id="spCard">
+          <h3 class="sp__card-title" id="spCardTitle">Neon Serpents</h3>
+          <p class="sp__card-text" id="spCardText">Eat the glowing pellets to grow. Steer with your
+            pointer or finger. Hold to boost — but it burns your length.</p>
+          <button class="btn btn--primary" id="spPlay" type="button">
+            <svg class="ico" aria-hidden="true"><use href="#i-play" /></svg>
+            <span id="spPlayLabel">Play</span>
+          </button>
         </div>
       </div>
 
-      <p class="arcade__msg" id="cbMsg" role="status" aria-live="polite"></p>
+      <p class="arcade__msg" id="spMsg" role="status" aria-live="polite"></p>
 
       <footer class="arcade__foot">
-        <span class="hint"><kbd>1</kbd>–<kbd>6</kbd> colour</span>
-        <span class="hint"><kbd>←</kbd><kbd>→</kbd> move</span>
-        <span class="hint"><kbd>Enter</kbd> submit</span>
+        <span class="hint"><kbd>Pointer</kbd> steer</span>
+        <span class="hint"><kbd>Hold</kbd> / <kbd>Space</kbd> boost</span>
         <span class="hint"><kbd>Esc</kbd> exit</span>
-        <button class="arcade__again" id="cbRestart" type="button">
-          <svg class="ico" aria-hidden="true"><use href="#i-refresh" /></svg> New game
+        <button class="arcade__again" id="spRestart" type="button">
+          <svg class="ico" aria-hidden="true"><use href="#i-refresh" /></svg> Restart
         </button>
       </footer>
     </div>
   </div>
 
   <script src="script.js?v=20260927"></script>
-  <script src="games.js?v=20260927-3"></script>
+  <script src="games.js?v=20260927-4"></script>
 </body>
 
 </html>
