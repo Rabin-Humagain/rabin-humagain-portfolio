@@ -29,7 +29,16 @@
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Enable JS-only enhancements (reveal animations, preloader) -->
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    document.documentElement.classList.add('js');
+    // Fail-safe: if the main script never initialises (blocked by a proxy/CDN,
+    // syntax error, 404…), drop the `js` class so the preloader disappears and
+    // every `.reveal` element becomes visible instead of leaving a blank page.
+    window.__rabinReady = false;
+    setTimeout(function () {
+      if (!window.__rabinReady) document.documentElement.classList.remove('js');
+    }, 3000);
+  </script>
 </head>
 
 <body>

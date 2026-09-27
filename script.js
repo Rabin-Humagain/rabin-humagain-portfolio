@@ -5,6 +5,9 @@
 (function () {
   'use strict';
 
+  // Tell the inline fail-safe in <head> that the script loaded and is running.
+  window.__rabinReady = true;
+
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
