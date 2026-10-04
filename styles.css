@@ -1168,6 +1168,10 @@ body.menu-open #navToggle .ico--close { display: block; }
 .contact__card--btn .contact__go { color: var(--lime); opacity: 0; transform: scale(.6); }
 .contact__card--btn.is-copied .contact__go { opacity: 1; transform: scale(1); }
 
+/* Non-interactive card (institutional email) */
+.contact__card--static { cursor: default; }
+.contact__card--static:hover { transform: none; border-color: var(--border); box-shadow: none; }
+
 .contact__clock {
   display: flex;
   align-items: center;
@@ -1281,6 +1285,20 @@ body.menu-open #navToggle .ico--close { display: block; }
   color: var(--muted);
 }
 .footer__tech { color: var(--muted); }
+
+/* Site-ownership verification line (institutional email, plain text) */
+.footer__verify {
+  padding-top: .9rem;
+  font-size: .78rem;
+  color: var(--muted);
+  text-align: center;
+}
+.footer__mail {
+  color: var(--text-2);
+  font-weight: 600;
+  letter-spacing: .01em;
+  user-select: all;
+}
 
 /* ---------- 18. Back to top ---------- */
 .to-top {
